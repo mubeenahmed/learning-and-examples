@@ -1,2 +1,2 @@
-cmdhistory=["(print \\"Hello World\\")" "(load-file \\"core.clj\\")" "(foo \\"Clojure\\")" "(foo \\"From Clojure\\")" "(compute 11 11)" "(main 1 1)" "(main 2 45)" "(main 1 1)" "(main 0 2)" "(main 02 02)" "(s1)" "(main )" "(main)" "(special-func)" "(powered)" "(with-let 1)"]
+cmdhistory=["(print \\"Hello World\\")" "(load-file \\"core.clj\\")" "(foo \\"Clojure\\")" "(foo \\"From Clojure\\")" "(compute 11 11)" "(main 1 1)" "(main 2 45)" "(main 1 1)" "(main 0 2)" "(main 02 02)" "(s1)" "(main )" "(main)" "(special-func)" "(powered)" "(with-let 1)" "(fact 4)" "(m-loop)"]
 eclipse.preferences.version=1

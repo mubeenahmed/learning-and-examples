@@ -1,4 +1,4 @@
-(ns example-clj)
+(ns example-clj.example)
 
 ; Using fn (anonymous function) with map
 (def powered (map (fn [x] (* x x)) [1 2 3 4]) )
