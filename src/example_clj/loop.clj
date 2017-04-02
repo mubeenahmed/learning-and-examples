@@ -28,3 +28,27 @@
   (reduce *' (range 1 (inc n))))
 
 (println (fact 5))
+
+
+; list comprehension
+(defn list-comp []
+	(for [number [1 2 3]
+	  letter [:a :b :C]]
+	  (str number letter)))
+(println (list-comp))
+
+
+(def cap-letters (map char (range (int \A)(int \Z) )))
+(def blacklists-letters #{\I \O})
+(defn letters-filters [] 
+  (for [letter-1 cap-letters
+      letter-2 cap-letters
+      :when (and (not (blacklists-letters letter-1))
+                 (not (blacklists-letters letter-2)))]
+  (str letter-1 letter-2)))
+
+
+
+
+
+
