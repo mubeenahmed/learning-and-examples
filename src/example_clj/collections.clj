@@ -27,3 +27,19 @@
 (println (set {:one 1 :two 2 :three 3}))
 (println (set "abcd"))
 (println '(1 2 3 4 3))
+
+;;
+(println (map #(* %1 2) [1 2 3] ) )
+(println (map #(* %1 2) '(1 2 3) ) )
+
+
+(println (reduce + [1 2 3]))
+
+
+;; Conj, adds new value to the existing data structure and return new data structure
+(println (conj [1 2 3] 4))
+(println (conj '(1 2 3) 4))
+(println (conj [[1 2] [3 4]] [5 6]))
+; conjoining with map only takes vector with exactly 2 data
+(println (conj {1 2 3 4} [1 2]))
+(println (conj {:firstname "John" :lastname "Doe"} {:age 25 :nationality "Chinese"}))
