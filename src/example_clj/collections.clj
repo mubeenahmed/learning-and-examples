@@ -43,3 +43,6 @@
 ; conjoining with map only takes vector with exactly 2 data
 (println (conj {1 2 3 4} [1 2]))
 (println (conj {:firstname "John" :lastname "Doe"} {:age 25 :nationality "Chinese"}))
+
+(println (flatten [1 [1 2 3]]))
+(println (flatten '(1 2 [3 (4 5)])))
