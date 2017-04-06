@@ -18,3 +18,14 @@
 (assoc :person :lname "Straut")
 
 (update-in stu [:address :zip] inc)
+
+;; -> implement directly defrecord
+
+(defrecord MyType [a b])
+(def foo (->MyType [1 2 3] [4 5 6]))
+
+
+(defn my-type [n]
+    (let [a vec (range n)
+          b vec (range n)] 
+        (->MyType a b)))
