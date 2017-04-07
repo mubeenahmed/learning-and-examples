@@ -60,3 +60,13 @@
 (thoughts " Parameter1")
 (fine " Parameter1" "Parameter2")
 (fine " Parameter1")
+
+
+;; Instead of extending type. We can use extend-protocol. extend-protocol let us define multiple implementations of 
+;; different types
+(extend-protocol My-Protocol
+             java.lang.String
+             (thoughts [x] (str x " is the parameter"))
+             (fine 
+                   ([x] (str x " is the one parameter"))
+                   ([x y](str x " and " y " are the two parameter"))))
