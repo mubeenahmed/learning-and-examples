@@ -40,3 +40,23 @@
          
 (polymorphism {:int :small :my-int 5} )
 (polymorphism {:int :large :my-int 5} )
+
+
+
+;; Protocol are same as defmulti but the main difference is that it provides the collections of functions whereas
+;; multimethod did not allow the collection of functions
+(defprotocol My-Protocol 
+             "THis is the doc string"
+             (thoughts [x] "this function take one arguments")
+             (fine [x][x y] "protocol online take 2 or 1 arugments"))
+
+(extend-type java.lang.String 
+             My-Protocol  
+             (thoughts [x] (str x " is the parameter"))
+             (fine 
+                   ([x] (str x " is the one parameter"))
+                   ([x y](str x " and " y " are the two parameter"))))
+                 
+(thoughts " Parameter1")
+(fine " Parameter1" "Parameter2")
+(fine " Parameter1")
