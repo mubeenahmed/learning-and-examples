@@ -1,0 +1,11 @@
+;; Java Interop
+;; (.instanceMember instance args*)
+;; (.instanceMember Classname args*)
+;; (.-instanceField instance)
+;; (Classname/staticMethod args*)
+;; Classname/staticField
+
+(.toUpperCase "Fred")
+(.getName String)
+(.-x (java.awt.Point. 1 2) )
+(System/getProperty "java.vm.version")
