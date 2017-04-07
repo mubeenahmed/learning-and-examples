@@ -29,3 +29,14 @@
     (let [a vec (range n)
           b vec (range n)] 
         (->MyType a b)))
+
+;; Polymorphism in clojure. Multimethod is very benefical. It help you to extend operations as well as data type without 
+;; changing the existing code. Full support of Open/Close Principles
+(defmulti polymorphism (fn [custom-int] (:int custom-int)))
+(defmethod polymorphism :small [custom-int]
+           (+ (:my-int custom-int) 4))
+(defmethod polymorphism :large [custom-int]
+           (+ (:my-int custom-int) 400000))
+         
+(polymorphism {:int :small :my-int 5} )
+(polymorphism {:int :large :my-int 5} )
