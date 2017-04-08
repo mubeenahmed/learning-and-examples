@@ -1,3 +1,7 @@
+;; Destructuring is the way of extracting multiple data from the data structures
+;; It helps to extract data from the complex data structure more conviently and less
+;; overhead
+
 (def coordes [10 20 30])
 
 (let [x (first coordes)
@@ -30,4 +34,7 @@
 (let [ {:keys [x y z] :or {x 100 y 200 z 300} } {:z 50} ]
      (+ x y z))
 
+(defn add-every-thing [ [{:keys [a c d] [b1 b2] :b} e]]
+  (+ a b1 b2 c d e))
 
+(add-every-thing [{:a 1 :b [2 3] :c 4 :d 1} 5])
