@@ -29,7 +29,8 @@
 
 
 ;; Multiple calls on java object
-;; Call all the method and function with given tin 
+;; Doto calls all of the methods and functions with the
+;; value of x supplied at the front of the given arguments
 (doto (java.util.ArrayList.)(.add 11)(.add 12) )
 (doto (java.util.HashMap.)(.put "a" 1)(.put "b" 2))
 (doto (java.util.Stack.)(.push 1)(.push 3)(.push 5) )
