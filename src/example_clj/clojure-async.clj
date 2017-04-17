@@ -8,7 +8,7 @@
 (def m-channel (chan capacity))
 (def stock-map {0 :shirt 10 :pants 40 :skirts 1 :socks} )
 
-(defn- generate-items []
+(defn generate-items []
   (let [items (for [x (range capacity)] (rand-int (count (keys stock-map))))]
     (map #(get stock-map %) items)))
 
