@@ -55,5 +55,15 @@
 
 (println @atomic-clock)
 
+;; Agent, provide shared access to mutable state. They allow non-blocking asynchoronus, unlike ref. They are 
+;; opposed to atom which provide synchronous
+(def a (agent 0) )
+
+;; send request to change its value
+(send a inc)
+(send a inc)
+(send a inc)
+@a
+
 
 
