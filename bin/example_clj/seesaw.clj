@@ -1,10 +1,15 @@
 (ns example-clj.seesaw
   (:use seesaw.core))
 
-(defn -main [& args]
-  (invoke-later
-    (-> (frame :title "Hello",
-           :content "Hello, Seesaw",
-           :on-close :exit)
-     pack!
-     show!)))
+(def btn (button :text "Start"))
+(def lbl (label "Enter your message"))
+
+(def panel (flow-panel :items [btn lbl]))
+
+
+(def f (frame :title "Dashboard" :content panel :on-close :dispose))
+(listen btn :action (fn [e] (alert "button is started")) )
+(listen btn :mouse-entered #(config! % :foreground :blue)
+          :mouse-exited  #(config! % :foreground :red))
+
+(-> f pack! show!)

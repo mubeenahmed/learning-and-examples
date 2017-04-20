@@ -5,4 +5,4 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/core.async "0.3.442"]
-                 [seesaw/seesaw "1.1.0"]])
+                 [seesaw/seesaw "1.1.0"] ])
