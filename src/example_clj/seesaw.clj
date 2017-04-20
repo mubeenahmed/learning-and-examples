@@ -3,8 +3,10 @@
 
 (def btn (button :text "Start"))
 (def lbl (label "Enter your message"))
+(def field (text "This is a text field."))
+(def m-list-box (listbox :model (-> ["List 1" "List 2" "List 3"]) ))
 
-(def panel (flow-panel :items [btn lbl]))
+(def panel (flow-panel :items [btn lbl m-list-box field]))
 
 
 (def f (frame :title "Dashboard" :content panel :on-close :dispose))
