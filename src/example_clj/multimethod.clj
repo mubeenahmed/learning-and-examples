@@ -19,8 +19,10 @@
 
 (update-in stu [:address :zip] inc)
 
-;; -> implement directly defrecord
-
+;; -> is the macro used to call next function in sequence.
+;; When accessing Java class and it is the consecutive operation we usually 
+;; uses .. for example (.. System (getProperties) (get "os.name"))
+;; But we can use -> to make more readable by (-> (System/getProperties) (.get "os.name"))
 (defrecord MyType [a b])
 (def foo (->MyType [1 2 3] [4 5 6]))
 
