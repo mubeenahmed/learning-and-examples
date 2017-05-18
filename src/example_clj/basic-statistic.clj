@@ -9,7 +9,11 @@
 ;; Calculating the means
 (def means (/ (reduce + heights) c ))
 
-;; Calculating the variance by Sum of ( Mean - X ) and powering by 2.s 
+;; Calculating the variance by Sum of ( Mean - X ) and powering by 2
+;; Why we square the difference, because we need the positive number
+;; This is similar to calculating the distance as the distance cannot be in negative
+;; Before sum the result of difference, it is need to eliminate the negative number
+;; This applies for the variance
 (def variance (/ (reduce + (map #(Math/pow (- means %) 2) heights)) c) )
 
 ;; Calcuating the standard deviation by square root
