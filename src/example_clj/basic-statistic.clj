@@ -23,6 +23,13 @@
 ;; occurred
 (def standard-deviation (Math/sqrt variance) )
 
+;; zero-score help to calculate the probability of a score occurring in normal distribution
+;; compare the score from differen normal distribution
+;; zero-score converts to group of frequences such that the mean is between 0 and 1
+(defn zero-score [x mean sd]
+  (/ (- x mean) sd))
+(zero-score 470 means standard-deviation)
+
 
 (println means)
 (println variance)
