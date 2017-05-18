@@ -17,6 +17,10 @@
 (def variance (/ (reduce + (map #(Math/pow (- means %) 2) heights)) c) )
 
 ;; Calcuating the standard deviation by square root
+;; Why we square root the variance, because we need to find the 
+;; root from which there is the variance in the heights or data
+;; square root helps to find the margin from which the variance
+;; occurred
 (def standard-deviation (Math/sqrt variance) )
 
 
