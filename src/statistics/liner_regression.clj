@@ -1,16 +1,26 @@
 (ns statistics.liner_regression)
-(use '(incanter core charts excel datasets))
+(use '(incanter core stats io datasets charts))
 
 
- ;; read .xls file of Australian airline passenger data from the 1950s.
 (with-data (read-xls "D:\\eclipse-workspace\\learning-and-examples\\src\\statistics\\regression.xlsx")
  (let [x ($ :x) 
        y (sweep ($ :y))] 
    (def plot (scatter-plot x y) )
    (view plot)
-   (def X (reduce bind-columns (for [i (range 1 11)] (pow x i))))
-   (def lm (linear-model y X))
+   ;(def X (reduce bind-columns (for [i (range 1 11)] (pow x i))))
+   (def coefs (:coefs lm))
+   (def lm (linear-model y x))
+   (def next-x (inc (last x)))
+   (def new-y (next-y (slope coefs) (intercept coefs) next-x))
+   (add-points plot [next-x] [new-y])
    (add-lines plot x (:fitted lm))))
+
+(defn slope [coefs] 
+  (second coefs))
+(defn intercept [coefs]
+  (first coefs))
+(defn next-y [slope intercept x]
+  (+ intercept (* slope x) ))
 
 
 ;; Learning Example
