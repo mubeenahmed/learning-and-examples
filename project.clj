@@ -6,5 +6,5 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/core.async "0.3.442"]
                  [org.apache.commons/commons-math3 "3.2"]
-                 [incanter "1.5.7"]
+                 [incanter "1.5.7"] 
                  [seesaw/seesaw "1.1.0"] ])

@@ -3,17 +3,17 @@
 
 
 (with-data (read-xls "D:\\eclipse-workspace\\learning-and-examples\\src\\statistics\\regression.xlsx")
- (let [x ($ :x) 
-       y (sweep ($ :y))] 
+ (let [x ($ :y) 
+       y (sweep ($ :x))] 
    (def plot (scatter-plot x y) )
    (view plot)
-   ;(def X (reduce bind-columns (for [i (range 1 11)] (pow x i))))
+   (def X (reduce bind-columns (for [i (range 1 11)] (pow x i))))
    (def coefs (:coefs lm))
    (def lm (linear-model y x))
    (def next-x (inc (last x)))
    (def new-y (next-y (slope coefs) (intercept coefs) next-x))
    (add-points plot [next-x] [new-y])
-   (add-lines plot x (:fitted lm))))
+   (add-lines plot X (:fitted lm))))
 
 (defn slope [coefs] 
   (second coefs))
