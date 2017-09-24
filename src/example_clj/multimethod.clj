@@ -50,18 +50,24 @@
 (defprotocol My-Protocol 
              "THis is the doc string"
              (thoughts [x] "this function take one arguments")
-             (fine [x][x y] "protocol online take 2 or 1 arugments"))
+             (fine [x][x y] "protocol take 2 or 1 arugments")
+             (worse [x][x y][x y z] "protocol online take 2 or 1 arugments"))
 
 (extend-type java.lang.String 
              My-Protocol  
              (thoughts [x] (str x " is the parameter"))
              (fine 
                    ([x] (str x " is the one parameter"))
-                   ([x y](str x " and " y " are the two parameter"))))
+                   ([x y](str x " and " y " are the two parameter")))
+             (worse 
+                    ([x] (str "worse with one " x))
+                    ([x y](str "worse with two " x " and " y) )
+                    ([x y z](str "worse with three " x "," y " and " z) )))
                  
 (thoughts " Parameter1")
 (fine " Parameter1" "Parameter2")
 (fine " Parameter1")
+(worse "1" " 2" "3")
 
 
 ;; Instead of extending type. We can use extend-protocol. extend-protocol let us define multiple implementations of 
